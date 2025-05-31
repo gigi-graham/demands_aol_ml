@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demands</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexstyle.css') }}">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="leftbar">
+            <a class="homenav" href="{{ url_for('home') }}">Home</a>
+            <a class="predictnav" href="{{ url_for('predict') }}">Predict</a>
+        </div>
+        <div class="rightbar">
+            <div class="logonav">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/logo_demands.png') }}" alt="Demands Logo">
+                    <span>Demands</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+        <div class="dark"></div>
+        <div class="title">
+            <h1>Welcome to Demands!</h1>
+            <h3>Demands is an AI powered app that could help retailers predict the demand of items.</h3>
+            <button><a href="{{ url_for('predict') }}">Try now!</a></button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="topfoot">
+            <div class="leftfoot">
+                <p>
+                    Agnetta Indira Revata<br>2702219156
+                </p>
+            </div>
+            <div class="middlefoot">
+                <p>
+                    Clarissa Aditjakra<br>2702312865
+                </p>
+            </div>
+            <div class="rightfoot">
+                <p>
+                    Jason Ho<br>2702306042
+                </p>
+            </div>
+        </div>
+        <div class="bottomfoot">
+            <p>
+                © “Kelompok 6” LM01 Machine Learning 
+            </p>
+        </div>
+    </div>
+</body>
+</html>

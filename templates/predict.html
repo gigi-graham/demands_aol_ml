@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demands</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predictstyle.css') }}">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="leftbar">
+            <a class="homenav" href="{{ url_for('home') }}">Home</a>
+            <a class="predictnav" href="{{ url_for('predict') }}">Predict</a>
+        </div>
+        <div class="rightbar">
+            <div class="logonav">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/logo_demands.png') }}" alt="Demands Logo">
+                    <span>Demands</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+        <div class="dark"></div>
+        <h2>Demand Prediction</h2>
+        
+        <div class="forms">
+            <form method="post">
+                <div>
+                    <label>Units in inventory:</label>
+                    <input type="number" name="inventory" placeholder="~ 50 - 500" required>
+                </div>
+
+                <div>
+                    <label>Discount (%):</label>
+                    <input type="number" name="discount" placeholder="~ 0 - 20" required>
+                </div>
+
+                <div>
+                    <label>Units sold:</label>
+                    <input type="number" name="sold" placeholder="~ 0 - 499" required>
+                </div>
+
+                <div>
+                    <label>Units ordered:</label>
+                    <input type="number" name="ordered" placeholder="~ 20 - 200" required>
+                </div>
+
+                <div>
+                    <label>Price:</label>
+                    <input type="number" step="0.01" name="price" placeholder="~ 10 - 100" required>
+                </div>
+
+                <div>
+                    <label>Competitor pricing:</label>
+                    <input type="number" step="0.01" name="competitor" placeholder="~ 5.03 - 104.94" required>
+                </div>
+
+                <div>
+                    <label>Category:</label>
+                    <select name="category">
+                        <option value="Clothing">Clothing</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Toys">Toys</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Region:</label>
+                    <select name="region">
+                        <option value="East">East</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="West">West</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Weather:</label>
+                    <select name="weather">
+                        <option value="Cloudy">Cloudy</option>
+                        <option value="Rainy">Rainy</option>
+                        <option value="Snowy">Snowy</option>
+                        <option value="Sunny">Sunny</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Season:</label>
+                    <select name="season">
+                        <option value="Autumn">Autumn</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </div>
+
+                <div class="forms full-width">
+                    <label>Holiday/Promotion:</label>
+                    <select name="holiday">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="full-width">
+                    <input type="submit" value="Predict!">
+                </div>
+            </form>
+        </div>
+        <h3>
+            {{ prediction_text if prediction_text else "Awaiting prediction..." }}
+        </h3>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="topfoot">
+            <div class="leftfoot">
+                <p>
+                    Agnetta Indira Revata<br>2702219156
+                </p>
+            </div>
+            <div class="middlefoot">
+                <p>
+                    Clarissa Aditjakra<br>2702312865
+                </p>
+            </div>
+            <div class="rightfoot">
+                <p>
+                    Jason Ho<br>2702306042
+                </p>
+            </div>
+        </div>
+        <div class="bottomfoot">
+            <p>
+                © “Kelompok 6” LM01 Machine Learning 
+            </p>
+        </div>
+    </div>
+</body>
+</html>
