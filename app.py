@@ -5,6 +5,8 @@ import pandas as pd
 
 app = Flask(__name__)
 
+# hai
+
 model = joblib.load('model.pkl')
 
 @app.route('/')
